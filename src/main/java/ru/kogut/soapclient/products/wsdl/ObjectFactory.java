@@ -92,8 +92,8 @@ public class ObjectFactory {
     }
 
     @XmlElementDecl(namespace = "http://kogut.ru/ws/products", name = "getProductResponse")
-    public JAXBElement<Object> createProductResponse(Object value) {
-        return new JAXBElement<Object>(_GetProductResponse_QNAME, Object.class, null, value);
+    public JAXBElement<GetProductResponse> createProductResponse(GetProductResponse value) {
+        return new JAXBElement<GetProductResponse>(_GetProductResponse_QNAME, GetProductResponse.class, null, value);
     }
 
     @XmlElementDecl(namespace = "http://kogut.ru/ws/products", name = "GetAnswerResponse")
