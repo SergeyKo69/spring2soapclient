@@ -39,12 +39,12 @@ public class ProductsClient extends WebServiceGatewaySupport {
 
     public GetProductResponse getProductById(final GetProductByIdRequest request) {
 
-        JAXBElement<GetProductResponse> response = (JAXBElement<GetProductResponse>)getWebServiceTemplate()
+        Object object = getWebServiceTemplate()
                 .marshalSendAndReceive(URI, request,
                         new SoapActionCallback(
                                 GET_BY_ID_ACTION));
 
-        return response.getValue();
+        return (GetProductResponse) object;
 
     }
 
