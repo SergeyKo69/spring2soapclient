@@ -33,6 +33,7 @@ public class ObjectFactory {
 
     private final static QName _GetAllProductsResponse_QNAME = new QName("http://kogut.ru/ws/products", "getAllProductsResponse");
     private final static QName _GetProductResponse_QNAME = new QName("http://kogut.ru/ws/products", "getProductResponse");
+    private final static QName _GetAnswerResponse_QNAME = new QName("http://kogut.ru/ws/products", "GetAnswerResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: products.wsdl
@@ -93,6 +94,11 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://kogut.ru/ws/products", name = "getProductResponse")
     public JAXBElement<Object> createProductResponse(Object value) {
         return new JAXBElement<Object>(_GetProductResponse_QNAME, Object.class, null, value);
+    }
+
+    @XmlElementDecl(namespace = "http://kogut.ru/ws/products", name = "GetAnswerResponse")
+    public JAXBElement<GetAnswerResponse> createGetAnswerResponse(GetAnswerResponse value) {
+        return new JAXBElement<GetAnswerResponse>(_GetAnswerResponse_QNAME, GetAnswerResponse.class, null, value);
     }
 
 }

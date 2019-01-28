@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import ru.kogut.soapclient.clients.wsdl.ClientsClient;
 
-@Configuration
+//@Configuration
 public class ClientsConfiguration {
 
     @Bean

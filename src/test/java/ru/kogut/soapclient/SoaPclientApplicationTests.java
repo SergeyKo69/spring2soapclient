@@ -14,31 +14,31 @@ import ru.kogut.soapclient.products.wsdl.*;
 @SpringBootTest
 public class SoaPclientApplicationTests {
 
-	@Autowired
-	ClientsClient clientsClient;
+//	@Autowired
+//	ClientsClient clientsClient;
 
 	@Autowired
 	ProductsClient productsClient;
 
-	@Test
-	public void clientsTest() {
-		SaveClientRequest clientRequest = new SaveClientRequest();
-		clientRequest.setTitle("title client");
-		clientRequest.setAddress("addres client");
-		clientRequest.setDelete(false);
-		GetAnswerResponse response = clientsClient.saveClient(clientRequest);
-		Assert.assertEquals("OK", response.getText());
-		Assert.assertFalse(response.getId() == null);
-		GetClientByIdRequest getClientByIdRequest = new GetClientByIdRequest();
-		getClientByIdRequest.setId(response.getId());
-		GetClientResponse clientResponse = clientsClient.getClientById(getClientByIdRequest);
-		Assert.assertNotNull(clientResponse.getClient());
-		DeleteClientRequest deleteClientRequest = new DeleteClientRequest();
-		deleteClientRequest.setClient(clientResponse.getClient());
-		clientsClient.deleteClient(deleteClientRequest);
-		clientResponse = clientsClient.getClientById(getClientByIdRequest);
-		Assert.assertNull(clientResponse.getClient());
-	}
+//	@Test
+//	public void clientsTest() {
+//		SaveClientRequest clientRequest = new SaveClientRequest();
+//		clientRequest.setTitle("title client");
+//		clientRequest.setAddress("addres client");
+//		clientRequest.setDelete(false);
+//		GetAnswerResponse response = clientsClient.saveClient(clientRequest);
+//		Assert.assertEquals("OK", response.getText());
+//		Assert.assertFalse(response.getId() == null);
+//		GetClientByIdRequest getClientByIdRequest = new GetClientByIdRequest();
+//		getClientByIdRequest.setId(response.getId());
+//		GetClientResponse clientResponse = clientsClient.getClientById(getClientByIdRequest);
+//		Assert.assertNotNull(clientResponse.getClient());
+//		DeleteClientRequest deleteClientRequest = new DeleteClientRequest();
+//		deleteClientRequest.setClient(clientResponse.getClient());
+//		clientsClient.deleteClient(deleteClientRequest);
+//		clientResponse = clientsClient.getClientById(getClientByIdRequest);
+//		Assert.assertNull(clientResponse.getClient());
+//	}
 
 	@Test
 	public void productsTest() {

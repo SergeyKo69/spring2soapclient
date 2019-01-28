@@ -1,9 +1,7 @@
 package ru.kogut.soapclient.products.wsdl;
 
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.springframework.ws.soap.client.core.SoapActionCallback;
-import ru.kogut.soapclient.products.wsdl.*;
 
 import javax.xml.bind.JAXBElement;
 
@@ -16,7 +14,6 @@ public class ProductsClient extends WebServiceGatewaySupport {
     private final String GET_ALL_ACTION = "http://kogut.ru/ws/products/ProductsPort/getAllProductsRequest";
     private final String GET_BY_ID_ACTION = "http://kogut.ru/ws/products/ProductsPort/getProductByIdRequest";
 
-    @ResponseBody
     public GetAnswerResponse saveProduct(final SaveProductRequest product) {
 
         JAXBElement<GetAnswerResponse> response =
@@ -56,7 +53,7 @@ public class ProductsClient extends WebServiceGatewaySupport {
         JAXBElement<GetAllProductsResponse> response = (JAXBElement<GetAllProductsResponse>)getWebServiceTemplate()
                 .marshalSendAndReceive(URI, "",
                         new SoapActionCallback(
-                                SAVE_ACTION));
+                                GET_ALL_ACTION));
 
         return response.getValue();
 
@@ -67,7 +64,7 @@ public class ProductsClient extends WebServiceGatewaySupport {
         JAXBElement<GetAnswerResponse> response = (JAXBElement<GetAnswerResponse>)getWebServiceTemplate()
                 .marshalSendAndReceive(URI, request,
                         new SoapActionCallback(
-                                SAVE_ACTION));
+                                DELETE_ACTION));
 
         return response.getValue();
 
