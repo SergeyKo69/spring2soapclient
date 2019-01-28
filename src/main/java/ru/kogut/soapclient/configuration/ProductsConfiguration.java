@@ -3,14 +3,13 @@ package ru.kogut.soapclient.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
-import ru.kogut.soapclient.clients.wsdl.ClientsClient;
 import ru.kogut.soapclient.products.wsdl.ProductsClient;
 
 @Configuration
 public class ProductsConfiguration {
 
     @Bean
-    public Jaxb2Marshaller marshaller() {
+    public Jaxb2Marshaller marshallerProduct() {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
         // this package must match the package in the <generatePackage> specified in
         // pom.xml
